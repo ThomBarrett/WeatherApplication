@@ -1,2 +1,2 @@
-class TemperatureSetting < ActiveRecord
+class TemperatureSetting < ActiveRecord::Base
 end
