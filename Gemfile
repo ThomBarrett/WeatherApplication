@@ -48,7 +48,8 @@ end
 group :test do
   gem 'factory_bot_rails'
   gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
+  gem 'shoulda-matchers', :require => false
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
   # Adds support for Capybara system testing and selenium driver
