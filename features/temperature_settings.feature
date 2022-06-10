@@ -13,6 +13,17 @@ Feature: TemperatureSetting
 
   Scenario: Creating Temperature Setting
     Given I visit the Temperature Setting new page
-    When I fill out the Temperature setting form correctly
-    Then I am redirected to the Temperature show page
+    When there are no Temperature Setting defined
+    And I fill out the Temperature setting form correctly
     Then I see the relevant temperature information
+
+  Scenario: Failing To Creating Temperature Setting Because of Validations
+    Given I visit the Temperature Setting new page
+    When there are no Temperature Setting defined
+    And I fill out the Temperature setting form incorrectly
+    Then I see the temperature error information
+
+  Scenario: Failing To Creating Temperature Setting Because one already exists
+    Given Temperature Setting are defined
+    Given I visit the Temperature Setting new page
+    Then I see a message that the temperatures setting already exist
