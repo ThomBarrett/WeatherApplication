@@ -4,7 +4,29 @@ require 'rails_helper'
 
 describe TemperatureSettingsController do
   describe 'POST create' do
+    let(:post_create) {
+      post :create, params: { temperature_setting: { cold_temperature: 0, warm_temperature: 50, hot_temperature: 100 } }
+    }
 
+    it 'creates a temperature setting' do
+      post_create
+      expect(TemperatureSetting.count).to eq 1
+    end
+
+    it 'sets cold_temperature correctly' do
+      post_create
+      expect(TemperatureSetting.first.cold_temperature).to eq 0
+    end
+
+    it 'sets warm_temperature correctly' do
+      post_create
+      expect(TemperatureSetting.first.warm_temperature).to eq 50
+    end
+
+    it 'sets hot_temperature correctly' do
+      post_create
+      expect(TemperatureSetting.first.hot_temperature).to eq 100
+    end
   end
 
   describe 'DELETE destroy' do
