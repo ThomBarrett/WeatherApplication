@@ -25,5 +25,17 @@ Feature: TemperatureSetting
 
   Scenario: Failing To Creating Temperature Setting Because one already exists
     Given Temperature Setting are defined
-    Given I visit the Temperature Setting new page
+    And I visit the Temperature Setting new page
     Then I see a message that the temperatures setting already exist
+
+  Scenario: Updating Temperature Setting
+    Given Temperature Setting are defined
+    And I visit the Temperature Setting edit page
+    When I fill out the Temperature setting edit form correctly
+    Then I see the relevant temperature information
+
+  Scenario: Failing To Updating Temperature Setting Because of Validations
+    Given Temperature Setting are defined
+    And I visit the Temperature Setting edit page
+    When I fill out the Temperature setting edit form incorrectly
+    Then I see the temperature error information

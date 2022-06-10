@@ -1,0 +1,27 @@
+<h1>Edit Temperature Settings</h1>
+
+<%= form_with model: @temperature_setting, url: temperature_setting_path, method: 'patch' do |form| %>
+  <% if @temperature_setting.errors.any? %>
+    <h2><%= pluralize(@temperature_setting.errors.count, "error") %> preventing these settings being saved:
+      <h2>
+        <ul>
+          <% @temperature_setting.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </h2>
+  <% end %>
+
+  <%= form.label :cold_temperature %>
+  <%= form.number_field :cold_temperature, in: -200..200 %>
+  <br>
+  <%= form.label :warm_temperature %>
+  <%= form.number_field :warm_temperature, in: -200..200 %>
+  <br>
+  <%= form.label :hot_temperature %>
+  <%= form.number_field :hot_temperature, in: -200..200 %>
+  <br>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to 'back', temperature_setting_path %>

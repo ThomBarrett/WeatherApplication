@@ -1,6 +1,5 @@
 <h1>New Temperature Settings</h1>
 
-<%#= render partial: 'form', temperature_setting: @temperature_setting, uri: 'new' %>
 <% if TemperatureSetting.count < 1%>
   <%= form_with model: @temperature_setting, url: temperature_setting_path, method: 'post' do |form| %>
     <% if @temperature_setting.errors.any? %>

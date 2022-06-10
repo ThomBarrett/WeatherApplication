@@ -34,7 +34,14 @@ describe TemperatureSettingsController do
   end
 
   describe 'PATCH update' do
+    let(:temperature_setting) { create(:temperature_setting) }
+    let(:patch_update) {
+        patch :update, params: { id: temperature_setting.id, temperature_setting: {
+          cold_temperature: 10, warm_temperature: 60, hot_temperature: 110 } } }
 
+    it 'updates the temperature setting' do
+      expect { patch_update }.to change { temperature_setting.reload.cold_temperature }.to 10
+    end
   end
 
   describe 'GET show' do
