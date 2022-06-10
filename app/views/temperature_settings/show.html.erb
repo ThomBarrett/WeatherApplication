@@ -1,0 +1,11 @@
+<h1>Temperature Settings</h1>
+
+<% if !@temperature_setting.nil? %>
+  <h2>Cold Temperature: <%= @temperature_setting.cold_temperature %></h2>
+  <h2>Warm Temperature: <%= @temperature_setting.warm_temperature %></h2>
+  <h2>Hot Temperature: <%= @temperature_setting.hot_temperature %></h2>
+  <p>You can edit temperature settings <%= link_to 'here', edit_temperature_setting_path %></p>
+<% else %>
+  <h2>Temperature Settings have not been defined</h2>
+  <p>You can define temperature settings <%= link_to 'here', new_temperature_setting_path %></p>
+<% end %>
