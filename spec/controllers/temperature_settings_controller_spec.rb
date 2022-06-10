@@ -30,9 +30,6 @@ describe TemperatureSettingsController do
     end
   end
 
-  describe 'DELETE destroy' do
-  end
-
   describe 'PATCH update' do
     let(:temperature_setting) { create(:temperature_setting) }
     let(:patch_update) do
