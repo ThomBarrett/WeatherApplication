@@ -11,6 +11,11 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 
 require 'shoulda/matchers'
+require 'support/factory_bot'
+
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+end
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|

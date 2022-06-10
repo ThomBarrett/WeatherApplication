@@ -1,0 +1,15 @@
+<%= form_for :temperature_setting, url: ur do |form| %>
+  <% if :temperature_setting.errors.any? %>
+    <h2><%= pluralize(:temperature_setting.errors.count, "error") %> preventing these settings being saved:<h2>
+      <ul>
+        <% :temperature_setting.errors.each do |error| %>
+          <li>error.full_message</li>
+        <% end %>
+      </ul>
+    </h2>
+  <% end %>
+
+  <%= form.label :cold_temperature %>
+  <%= form.range_field :cold_temperature, in: -200..200 %>
+
+<% end %>
