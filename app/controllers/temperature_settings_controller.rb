@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# This Controller is for handling TemperatureSetting Model CRUD
 class TemperatureSettingsController < ActionController::Base
   def show
     @temperature_setting = TemperatureSetting.first

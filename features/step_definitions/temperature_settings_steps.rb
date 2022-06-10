@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Given('I visit the Temperature Setting show page') do
   visit temperature_setting_path
 end
@@ -40,29 +42,29 @@ Then('I see a message that the temperatures setting already exist') do
 end
 
 When('I fill out the Temperature setting form correctly') do
-  fill_in "temperature_setting_cold_temperature", with: 0
-  fill_in "temperature_setting_warm_temperature", with: 50
-  fill_in "temperature_setting_hot_temperature", with: 100
-  click_on "Create Temperature setting"
+  fill_in 'temperature_setting_cold_temperature', with: 0
+  fill_in 'temperature_setting_warm_temperature', with: 50
+  fill_in 'temperature_setting_hot_temperature', with: 100
+  click_on 'Create Temperature setting'
 end
 
 When('I fill out the Temperature setting edit form correctly') do
-  fill_in "temperature_setting_cold_temperature", with: 10
-  fill_in "temperature_setting_warm_temperature", with: 60
-  fill_in "temperature_setting_hot_temperature", with: 110
-  click_on "Update Temperature setting"
+  fill_in 'temperature_setting_cold_temperature', with: 10
+  fill_in 'temperature_setting_warm_temperature', with: 60
+  fill_in 'temperature_setting_hot_temperature', with: 110
+  click_on 'Update Temperature setting'
 end
 
 When('I fill out the Temperature setting form incorrectly') do
-  fill_in "temperature_setting_cold_temperature", with: 100
-  fill_in "temperature_setting_warm_temperature", with: 50
-  fill_in "temperature_setting_hot_temperature", with: 0
-  click_on "Create Temperature setting"
+  fill_in 'temperature_setting_cold_temperature', with: 100
+  fill_in 'temperature_setting_warm_temperature', with: 50
+  fill_in 'temperature_setting_hot_temperature', with: 0
+  click_on 'Create Temperature setting'
 end
 
 When('I fill out the Temperature setting edit form incorrectly') do
-  fill_in "temperature_setting_cold_temperature", with: 100
-  fill_in "temperature_setting_warm_temperature", with: 50
-  fill_in "temperature_setting_hot_temperature", with: 0
-  click_on "Update Temperature setting"
+  fill_in 'temperature_setting_cold_temperature', with: 100
+  fill_in 'temperature_setting_warm_temperature', with: 50
+  fill_in 'temperature_setting_hot_temperature', with: 0
+  click_on 'Update Temperature setting'
 end

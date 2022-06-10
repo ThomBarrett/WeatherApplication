@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
+# rubocop:disable Metrics/BlockLength
 require 'rails_helper'
 
 describe TemperatureSettingsController do
   describe 'POST create' do
-    let(:post_create) {
+    let(:post_create) do
       post :create, params: { temperature_setting: { cold_temperature: 0, warm_temperature: 50, hot_temperature: 100 } }
-    }
+    end
 
     it 'creates a temperature setting' do
       post_create
@@ -30,14 +31,15 @@ describe TemperatureSettingsController do
   end
 
   describe 'DELETE destroy' do
-
   end
 
   describe 'PATCH update' do
     let(:temperature_setting) { create(:temperature_setting) }
-    let(:patch_update) {
-        patch :update, params: { id: temperature_setting.id, temperature_setting: {
-          cold_temperature: 10, warm_temperature: 60, hot_temperature: 110 } } }
+    let(:patch_update) do
+      patch :update, params: { id: temperature_setting.id, temperature_setting: {
+        cold_temperature: 10, warm_temperature: 60, hot_temperature: 110
+      } }
+    end
 
     it 'updates the temperature setting' do
       expect { patch_update }.to change { temperature_setting.reload.cold_temperature }.to 10
@@ -46,14 +48,14 @@ describe TemperatureSettingsController do
 
   describe 'GET show' do
     it 'assigns temperature_settings' do
-      temperature_setting = TemperatureSetting.create(cold_temperature: 0, warm_temperature: 50, hot_temperature: 100)
+      TemperatureSetting.create(cold_temperature: 0, warm_temperature: 50, hot_temperature: 100)
       get :show
       expect(assigns(:temperature_setting)).to eq TemperatureSetting.first
     end
 
     it 'renders the show page' do
       get :show
-      expect(response).to render_template("show")
+      expect(response).to render_template('show')
     end
   end
 
@@ -66,3 +68,4 @@ describe TemperatureSettingsController do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength
