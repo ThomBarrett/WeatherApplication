@@ -1,5 +1,7 @@
-require 'rails_helper'
+# frozen_string_literal: true
 
+require 'rails_helper'
+# rubocop:disable Metrics/BlockLength
 describe 'TemperatureCalculator' do
   describe '.how_hot_is_it' do
     subject { TemperatureCalculator }
@@ -42,3 +44,4 @@ describe 'TemperatureCalculator' do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

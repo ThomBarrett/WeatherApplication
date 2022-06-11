@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
+# TemperatureCalculator is used to work out how hot a temperature is in accordance to the temperature settings
 class TemperatureCalculator
   def self.how_hot_is_it(temperature)
-
     temperature_setting = TemperatureSetting.first
     return 'unknown' if temperature_setting.nil? || temperature.nil?
 
