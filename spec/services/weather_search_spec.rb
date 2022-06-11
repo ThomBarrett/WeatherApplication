@@ -1,10 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'WeatherSearch' do
-
   let(:postcode) { 'IP1 1SW' }
   describe '.search_by_postcode' do
-
     it 'fetches the weather data from weather api' do
       expect(WeatherSearch.search_by_postcode(postcode)['location']['name']).to eq 'Ipswich'
     end
