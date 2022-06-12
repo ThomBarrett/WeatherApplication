@@ -2,6 +2,9 @@
 
 # WeatherSearch class is used to query WeatherApi and return Temperature Results
 class WeatherSearch
+
+  require 'httparty'
+
   def self.search_by_postcode(postcode)
     key = 'b618835832eb470490c200325221006' # Change this to your own key
     request = "https://api.weatherapi.com/v1/current.json?key=#{key}&q=#{postcode}&aqi=no"
