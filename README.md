@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Versions
+* Ruby version: ruby-2.7.2
+* Rails verison 6.1.6
+  
+Install Gems
+* bundle install
 
-Things you may want to cover:
+Database creation:
+* bundle exec rails db:create db:migrate 
+    
+  
+Test
+* Test database setup: bundle exec rails db:migrate RAILS_ENV=test
+* Rspec: bundle exec rspec
+* Cucumber: bundle exec cucumber
+* Rubocop: bundle exec rubocop
+* Rails Best Practices: bundle exec rails_best_practices
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run
+* Run application: bundle exec rails s
+* Then go to localhost:3000
